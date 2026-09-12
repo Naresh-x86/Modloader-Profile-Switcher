@@ -13,7 +13,7 @@
 
 ___
 
-This is a single-executable tool designed to quickly change the active [Modloader](https://github.com/thelink2012/modloader) profile in Grand Theft Auto: San Andreas. It's built in Rust and utilizes the native Windows GUI bindings. It is incredibly lightweight (~1.2 MB) and requires no external dependencies or runtimes.
+This is a single-executable tool designed to quickly change the active profile in [Modloader](https://github.com/thelink2012/modloader) for Grand Theft Auto III, Vice City and San Andreas. It is incredibly lightweight (~1.2 MB) and requires no external dependencies or runtimes. Built in Rust and utilizes the native Windows GUI bindings.
 
 ## How It Works
 
@@ -26,7 +26,7 @@ This is a single-executable tool designed to quickly change the active [Modloade
 
 ## Installation & Usage
 
-1. **Download**: Obtain the latest `ProfileSwitcher.exe` from the [Releases](#) page.
+1. **Download**: Obtain the latest `ProfileSwitcher.exe` from the [Releases](https://github.com/Naresh-x86/Modloader-Profile-Switcher/releases) page.
 2. **Install**: Drop the executable directly into your Grand Theft Auto root directory (the same folder containing game's `.exe` and your `modloader` folder).
 3. **Run**: Launch `ProfileSwitcher.exe`. Select your desired profile, and the configuration will instantly be updated.
 
