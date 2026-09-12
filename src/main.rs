@@ -163,8 +163,17 @@ fn main() {
                     if handle == btn.handle {
                         let new_profile = &profiles_rc[i];
                         if update_ini(&ini_path_rc, new_profile) {
-                            nwg::simple_message("Success", &format!("Profile changed to {}", new_profile));
-                            nwg::stop_thread_dispatch();
+                            // Update UI state to reflect the change
+                            for (j, b) in buttons_rc.iter().enumerate() {
+                                let p = &profiles_rc[j];
+                                if p == new_profile {
+                                    b.set_text(&format!("{} (Active)", p));
+                                    b.set_enabled(false);
+                                } else {
+                                    b.set_text(p);
+                                    b.set_enabled(true);
+                                }
+                            }
                         } else {
                             nwg::error_message("Error", "Failed to update modloader.ini");
                         }
