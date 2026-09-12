@@ -27,7 +27,7 @@ This is a single-executable tool designed to quickly change the active [Modloade
 ## Installation & Usage
 
 1. **Download**: Obtain the latest `ProfileSwitcher.exe` from the [Releases](#) page.
-2. **Install**: Drop the executable directly into your Grand Theft Auto: San Andreas root directory (the same folder containing `gta-sa.exe` and your `modloader` folder).
+2. **Install**: Drop the executable directly into your Grand Theft Auto root directory (the same folder containing game's `.exe` and your `modloader` folder).
 3. **Run**: Launch `ProfileSwitcher.exe`. Select your desired profile, and the configuration will instantly be updated.
 
 ## Building from Source
