@@ -103,12 +103,18 @@ fn main() {
         return;
     }
 
+    let mut icon = Default::default();
+    let _ = nwg::Icon::builder()
+        .source_bin(Some(include_bytes!("../icon.ico")))
+        .build(&mut icon);
+
     let mut window = Default::default();
     nwg::Window::builder()
         .flags(nwg::WindowFlags::WINDOW | nwg::WindowFlags::VISIBLE | nwg::WindowFlags::MINIMIZE_BOX)
         .size((350, 20 + (profiles.len() as i32) * 40))
         .position((300, 300))
         .title("Modloader Profile Switcher")
+        .icon(Some(&icon))
         .build(&mut window)
         .unwrap();
 
