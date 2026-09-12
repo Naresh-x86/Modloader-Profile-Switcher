@@ -1,6 +1,16 @@
 [package]
 name = "modloader-profile-switcher"
 version = "0.1.0"
-edition = "2024"
+edition = "2021" # Change edition to 2021 just to be safe with most crates
 
 [dependencies]
+native-windows-gui = "1.0.13"
+native-windows-derive = "1.0.3"
+regex = "1.10.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
