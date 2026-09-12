@@ -39,7 +39,7 @@ fn parse_ini(path: &PathBuf) -> Option<(String, Vec<String>)> {
     for line in content.lines() {
         if let Some(caps) = re_profile.captures(line) {
             let profile_name = caps[1].trim().to_string();
-            if profile_name.to_lowercase() != "default" && !profiles.contains(&profile_name) {
+            if !profiles.contains(&profile_name) {
                 profiles.push(profile_name);
             }
         }
@@ -106,9 +106,9 @@ fn main() {
     let mut window = Default::default();
     nwg::Window::builder()
         .flags(nwg::WindowFlags::WINDOW | nwg::WindowFlags::VISIBLE | nwg::WindowFlags::MINIMIZE_BOX)
-        .size((350, 60 + (profiles.len() as i32) * 40))
+        .size((350, 20 + (profiles.len() as i32) * 40))
         .position((300, 300))
-        .title("Profile Switcher")
+        .title("Modloader Profile Switcher")
         .build(&mut window)
         .unwrap();
 
@@ -119,15 +119,6 @@ fn main() {
         .spacing(5)
         .build(&mut layout)
         .unwrap();
-
-    let mut label = Default::default();
-    nwg::Label::builder()
-        .text(&format!("Current Profile: {}", current_profile))
-        .parent(&window)
-        .build(&mut label)
-        .unwrap();
-
-    layout.add_child(0, 0, &label);
 
     let mut buttons = Vec::new();
 
@@ -143,7 +134,7 @@ fn main() {
             .build(&mut btn)
             .unwrap();
 
-        layout.add_child(0, (i + 1) as u32, &btn);
+        layout.add_child(0, i as u32, &btn);
         buttons.push(btn);
     }
 
